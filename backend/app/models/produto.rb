@@ -7,7 +7,7 @@ class Produto < ApplicationRecord
 
     def as_json(options={})
         super(
-            except: [:created_at, :updated_at],
+            except: [:created_at, :updated_at, :unidade_id],
             include: {unidade: {only: [:id, :descricao, :sigla]}},
             # methods: :sigla
         )
